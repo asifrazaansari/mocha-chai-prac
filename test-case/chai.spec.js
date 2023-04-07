@@ -28,8 +28,13 @@ describe('assert check', () => {
 
 
     it('length check of product', () => {
-        assert.lengthOf(product.items, 2, `${product.items} value has a length ${product.items.length}`);
-    })
+        const fruitNames = product.items.map(item => item.fruit).join(', ');
+        const productName = Object.keys( product.items[0])
+        const errorMessage = `The product "${productName}" contains the following fruits: ${fruitNames}. Expected 1 fruit.`;
+        assert.lengthOf(product.items, 2, errorMessage);
+    });
+    
+    
 
 })
 

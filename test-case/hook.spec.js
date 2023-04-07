@@ -8,9 +8,7 @@ describe('Hooks Check', () => {
     after(function(){
         console.log("===================last==============")
     })
-    before(function(){
-        console.log("===================first==============")
-    })
+   
 
     afterEach(function(){
         console.log("==after evrey test case==")
@@ -28,6 +26,10 @@ describe('Hooks Check', () => {
 
     it("value", function(){
         expect(data).to.be.equal("code")
+    })
+
+    before(function(){
+        console.log("===================first==============")
     })
 
 })
